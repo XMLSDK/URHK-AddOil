@@ -7,7 +7,7 @@
 	<title>雨傘革命打氣機 － 衍生自佔中打氣機</title>
 </head>
 
-<body style="margin:0px;padding:0px;overflow:hidden;height:100%;">
+<body style="margin:0px;padding:0px;overflow:hidden;height:100%;background-color:black;">
 <script type="text/javascript">
 
 function refresh() {
@@ -17,20 +17,17 @@ function refresh() {
 	console.log(randomID.toString());
 	var url = 'http://occupier.hk/standbyyou/viewer.php?id=' + randomID.toString();
 	console.log(url);
+	$('#theLabel').html(url + '<br>隨機顯示自佔中打氣機<br>－－雨傘革命打氣機');
 	$('#myIframe').attr('src', url);
 }
 
 $(document).ready(function() {
 	refresh();
 	setInterval(refresh, 15000);
-
-	$('#myIframe').on('load', function() {
-		console.log($('#myIframe').contents().find("title").text());
-	});
 });
 
 </script>
-<div style="position:fixed;top:10px;left:10px;color:white;">雨傘革命打氣機<br>衍生自佔中打氣機</div>
+<div id="theLabel" style="color:#69cef6;"></div>
 <iframe id="myIframe" width="100%" height="100%" frameborder="0"></iframe>
 
 </body>
